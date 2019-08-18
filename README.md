@@ -11,6 +11,7 @@
 	- [PhpMetrics](#phpmetrics-arrow_up)
 	- [PHPLOC](#phploc-arrow_up)
 	- [PHPMD - PHP Mess Detector](#phpmd-php-mess-detector-arrow_up)
+	- [dd for PHP](#dd-for-php-arrow_up)
 - [Composer](#composer-installation-arrow_up)
 	- [Composer permission problem](#composer-permission-problem-arrow_up) 
 	- [Composer global installations problem](#composer-global-installations-problem-arrow_up) 
@@ -22,7 +23,6 @@
 	- [Laravel permissions](#laravel-permissions-arrow_up)
 	- [Laravel link uploads folder](#laravel-link-uploads-folder-arrow_up)
 	- [Laravel on shared host .htaccess](#laravel-on-shared-host-.htaccess-arrow_up)
-- [PhpStorm](#phpstorm-arrow_up)
 - [Elasticsearch](#elasticsearch-arrow_up)
 - [Linux](#linux-arrow_up)
 	- [Load other drives automatically on start up](#load-other-drives-automatically-on-start-up-arrow_up)
@@ -189,7 +189,7 @@ while
   </file>
 </pmd>
 ```
-# dd for PHP
+# dd for PHP [:arrow_up:](#index)
 ```php
 <?php
 
@@ -366,25 +366,6 @@ ln -s ../storage/app/public/uploads uploads
 	RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
 ```
-
-# PhpStorm [:arrow_up:](#index)
-
-### Crack:
-
-```bash
-sudo nano /etc/hosts
-```
-```bash
-0.0.0.0 account.jetbrains.com
-```
-[Patch file](http://idea.lanyus.com/jar)
-Open
-`/opt/PhpStorm/bin/phpstorm.vmoptions`
-`/opt/PhpStorm/bin/phpstorm64.vmoptions`
-and add
-`-javaagent:/opt/PhpStorm/bin/JetbrainsIdesCrack.jar`
-[Get a key](http://idea.lanyus.com/getkey)
-[Servers](https://www.licensez.com/)
 
 # Elasticsearch [:arrow_up:](#index)
 ```bash
