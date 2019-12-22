@@ -9,16 +9,16 @@
 - [Elasticsearch](#elasticsearch-menu-arrow_up)
 - [Composer](#composer-menu-arrow_up)
 - [Laravel](#laravel-menu-arrow_up)
-- [Windows](#windows-menu-arrow_up)
 - [MySQL](#mysql-menu-arrow_up)
 - [PHP](#php-menu-arrow_up)
 - [Nodjs](#nodjs-menu-arrow_up)
 - [Postman](#postman-menu-arrow_up)
 - [Linux](#linux-menu-arrow_up)
+- [Windows](#windows-menu-arrow_up)
 
 ******************************************
 ##### Docker menu [:arrow_up:](#index)
-* [Installation](#installation-arrow_up)
+* [Docker installation](#docker-installation-arrow_up)
 * [Post install](#post-install-arrow_up)
 * [Docker Compose](#docker-compose-arrow_up)
 * [Copy From Container](#copy-from-container-arrow_up)
@@ -44,7 +44,7 @@
 * [Elasticsearch](#elasticsearch-arrow_up)
 ******************************************
 ##### Composer menu [:arrow_up:](#index)
-* [Composer](#composer-installation-arrow_up)
+* [Composer installation](#composer-installation-arrow_up)
 * [Composer permission problem](#composer-permission-problem-arrow_up)
 * [Composer global installations problem](#composer-global-installations-problem-arrow_up)
 ******************************************
@@ -54,9 +54,6 @@
 * [Laravel on shared host .htaccess](#laravel-on-shared-host-.htaccess-arrow_up)
 * [Laravel IDE helper](#laravel-ide-helper-arrow_up)
 * [Laravel log regex](#laravel-log-regex-arrow_up)
-******************************************
-##### Windows menu [:arrow_up:](#index)
-* [Windows Enterprise Activation](#windows-enterprise-activation-arrow_up)
 ******************************************
 ##### MySQL menu [:arrow_up:](#index)
 * [MySql Export](#mysql-export-arrow_up)
@@ -75,6 +72,7 @@
 * [Elasticsearch Max Map Count](#elasticsearch-vm-max-map-count-arrow_up)
 ******************************************
 ##### Nodjs menu [:arrow_up:](#index)
+* [npm installation](#npm-installation-arrow_up)
 * [npm permission problem](#npm-permission-problem-arrow_up)
 ******************************************
 ##### Postman menu [:arrow_up:](#index)
@@ -100,11 +98,14 @@
 * [VLC](#vlc-arrow_up)
 * [Custom gestures](#custom-gestures-arrow_up)
 * [Enpass browser sync problem](#enpass-browser-sync-problem-arrow_up)
+******************************************
+##### Windows menu [:arrow_up:](#index)
+* [MBR to GPT](#mbr-to-gpt-arrow_up)
+* [Windows Enterprise Activation](#windows-enterprise-activation-arrow_up)
 
 
-
-# Docker installation [:arrow_up:](#index)
-### installation [:arrow_up:](#index)
+# Docker [:arrow_up:](#index)
+### Docker installation [:arrow_up:](#index)
 ```bash
 # Debian
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
@@ -350,7 +351,8 @@ and add
 
 `vm.max_map_count=262144`
 
-# Composer installation [:arrow_up:](#index)
+# Composer [:arrow_up:](#index)
+### Composer installation [:arrow_up:](#index)
 [Composer website](https://getcomposer.org/download/)
 
 ```bash
@@ -455,7 +457,8 @@ sudo nano /etc/hosts
 192.168.225.22 example.dev
 ```
 
-# Nodjs installation [:arrow_up:](#index)
+# Nodjs [:arrow_up:](#index)
+#### npm installation [:arrow_up:](#index)
 ```bash
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
@@ -475,7 +478,7 @@ sudo chown $USER:$USER -R $HOME/.npm
 ```
 ### globally installations permission error
 ```bash
-sudo chown $USER:$USER - R /usr/lib/node_modules
+sudo chown -R $USER:$USER /usr/lib/node_modules
 ```
 # Postman [:arrow_up:](#index)
 ### Postman Pre-Requests [:arrow_up:](#index)
@@ -996,6 +999,14 @@ sudo update-mime-database /usr/share/mime
 
 # Windows [:arrow_up:](#index)
 
+### MBR to GPT [:arrow_up:](#index)
+```bash
+diskpart
+list disk
+select disk 0
+clean
+convert gpt
+```
 ### Windows Enterprise Activation [:arrow_up:](#index)
 ```bash
 slmgr /skms kms.digiboy.ir
