@@ -81,6 +81,7 @@
 ##### Linux menu [:arrow_up:](#index)
 * [Load other drives automatically on start up](#load-other-drives-automatically-on-start-up-arrow_up)
 * [Wifi deriver](#wifi-deriver-arrow_up)
+* [Bluetooth headsets problem (Output devices setting)](#bluetooth-headsets-problem-arrow_up)
 * [UFW](#ufw-arrow_up)
 * [Network restart Ubuntu](#network-restart-ubuntu-arrow_up)
 * [Desktop icon](#desktop-icon-arrow_up)
@@ -696,6 +697,7 @@ or
 ```
 
 ## Wifi deriver [:arrow_up:](#index)
+### Lenovo 
 ##### option 1
 ```bash
 lspci | grep -i wireless
@@ -704,6 +706,15 @@ sudo apt install firmware-atheros synaptic
 ```
 ##### option 2:
 [Qualcomm-Atheros-QCA9377-wireless-not-working-on-lenovo-with-Ubuntu](https://github.com/fnzeta/Qualcomm-Atheros-QCA9377-wireless-not-working-on-lenovo-with-Ubuntu/blob/master/README.md)
+
+### ASUS Realtek RTL8821CE
+#### [Realtek RTL8821CE Driver](https://github.com/tomaspinho/rtl8821ce)
+
+## Bluetooth headsets problem [:arrow_up:](#index)
+
+```
+sudo apt-get install pulseaudio-module-bluetooth
+```
 
 ## UFW [:arrow_up:](#index)
 ```bash
