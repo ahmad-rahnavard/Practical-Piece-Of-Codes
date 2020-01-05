@@ -66,6 +66,7 @@
 * [PHPLOC](#phploc-arrow_up)
 * [PHPMD - PHP Mess Detector](#phpmd---php-mess-detector-arrow_up)
 * [dd for PHP](#dd-for-php-arrow_up)
+* [PHP Elvis ?: and Null Coalescing ?? operators](#php-elvis--and-null-coalescing--operators-arrow_up)
 * [User Agent device](#user-agent-device-arrow_up)
 ******************************************
 ##### Elasticsearch menu [:arrow_up:](#index)
@@ -162,6 +163,11 @@ sudo ln -sf /usr/local/bin/docker-compose /usr/bin/docker-compose
 sudo docker cp mysql:/was_impressions.sql.gz .
 ```
 
+## List Container IPs [:arrow_up:](#index)
+```bash
+docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+```
+
 # PHP installation [:arrow_up:](#index)
 Debian 10 (Buster)
 #### PHP 7.4 [:arrow_up:](#index)
@@ -189,11 +195,6 @@ sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get install php7.2
 sudo apt-get install php7.2-zip php7.2-curl php7.2-intl php-uuid php-amqp php-mongodb php7.2-sqlite3 php7.2-mysql php7.2-gd php7.2-soap php-pear php7.2-dev php7.2-mbstring php7.2-xml php7.2-cgi php-xml php7.2-dom php7.2-xdebug php7.2-mysql sqlite php7.2-sqlite3
-```
-
-## List Container IPs [:arrow_up:](#index)
-```bash
-docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
 ```
 # [PHPUnit](https://phpunit.de/) [:arrow_up:](#index)
 ```bash
@@ -288,6 +289,26 @@ function dd($data) {
  highlight_string("<?php\n " . var_export($data, true) . "?>");
  echo '<script>document.getElementsByTagName("code")[0].getElementsByTagName("span")[1].remove();document.getElementsByTagName("code")[0].getElementsByTagName("span")[document.getElementsByTagName("code")[0].getElementsByTagName("span").length - 1].remove();</script>'; die();}
 ```
+### PHP Elvis ?: and Null Coalescing ?? operators [:arrow_up:](#index)
+
+|Expression         |echo ($x ?: 'hello')           |echo ($x ?? 'hello') |
+|-------------------|-------------------------------|---------------------|
+|$x = "";           |'hello'                        |""                   |
+|$x = null;         |'hello'                        |'hello'              |
+|$x;                |'hello'(Undefined variable: x) |'hello'              |
+|$x = [];           |'hello'                        |[]                   |
+|$x = ['a', 'b'];   |['a', 'b']                     |['a', 'b']           |
+|$x = false;        |'hello'                        |false                |
+|$x = true;         |true                           |true                 |
+|$x = 1;            |1                              |1                    |
+|$x = 0;            |'hello'                        |0                    |
+|$x = -1;           |-1                             |-1                   |
+|$x = '1';          |'1'                            |'1'                  |
+|$x = '0';          |'hello'                        |'0'                  |
+|$x = '-1';         |'-1'                           |'-1'                 |
+|$x = 'random';     |'random'                       |'random'             |
+|$x = new stdClass; |object(stdClass)               |object(stdClass)     |
+
 ### User Agent device [:arrow_up:](#index)
 ```bash
 # mobile
