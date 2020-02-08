@@ -100,6 +100,7 @@
 * [VLC](#vlc-arrow_up)
 * [Custom gestures](#custom-gestures-arrow_up)
 * [Enpass browser sync problem](#enpass-browser-sync-problem-arrow_up)
+* [Mount exfat on Ubuntu](#mount-exfat-on-ubuntu-arrow_up)
 ******************************************
 ##### Windows menu [:arrow_up:](#index)
 * [MBR to GPT](#mbr-to-gpt-arrow_up)
@@ -1007,6 +1008,13 @@ gesture pinch out 2 xdotool key ctrl+F12
 then run
 ```bash
 libinput-gestures-setup restart
+```
+
+### Mount exfat on Ubuntu [:arrow_up:](#index)
+```bash
+sudo add-apt-repository universe
+sudo apt update
+sudo apt install exfat-fuse exfat-utils
 ```
 
 ### Debug [:arrow_up:](#index)
