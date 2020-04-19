@@ -101,6 +101,7 @@
 * [Custom gestures](#custom-gestures-arrow_up)
 * [Enpass browser sync problem](#enpass-browser-sync-problem-arrow_up)
 * [Mount exfat on Ubuntu](#mount-exfat-on-ubuntu-arrow_up)
+* [Gimp](#gimp-arrow_up)
 ******************************************
 ##### Windows menu [:arrow_up:](#index)
 * [MBR to GPT](#mbr-to-gpt-arrow_up)
@@ -1010,13 +1011,6 @@ then run
 libinput-gestures-setup restart
 ```
 
-### Mount exfat on Ubuntu [:arrow_up:](#index)
-```bash
-sudo add-apt-repository universe
-sudo apt update
-sudo apt install exfat-fuse exfat-utils
-```
-
 ### Debug [:arrow_up:](#index)
 ```bash
 libinput-gestures -d
@@ -1035,6 +1029,20 @@ sudo libinput-gestures-setup uninstall
 sudo apt install desktop-file-utils
 sudo update-desktop-database
 sudo update-mime-database /usr/share/mime
+```
+
+### Mount exfat on Ubuntu [:arrow_up:](#index)
+```bash
+sudo add-apt-repository universe
+sudo apt update
+sudo apt install exfat-fuse exfat-utils
+```
+
+### Gimp [:arrow_up:](#index)
+#### Content aware fill (installing additional plugins like Resynthesizer)
+```bash
+# debian
+sudo apt install gimp-plugin-registry gimp-python
 ```
 
 # Windows [:arrow_up:](#index)
