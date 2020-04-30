@@ -54,6 +54,7 @@
 * [Laravel on shared host .htaccess](#laravel-on-shared-host-.htaccess-arrow_up)
 * [Laravel IDE helper](#laravel-ide-helper-arrow_up)
 * [Laravel log regex](#laravel-log-regex-arrow_up)
+* [Laravel queue](#laravel-queue-arrow_up)
 ******************************************
 ##### MySQL menu [:arrow_up:](#index)
 * [MySql Export](#mysql-export-arrow_up)
@@ -550,6 +551,23 @@ php artisan ide-helper:generate
 \.WARNING\:?.*$  # WARNING
 \.INFO\:?.*$     # INFO
 ```
+
+### Laravel queue [:arrow_up:](#index)
+| Command	|	Description |
+|-|-|
+| nohup php artisan queue:work &	|	The job will work after the terminal is closed |
+| php artisan queue:listen	|	Alternative to queue:work that lets you watch the queue process and you don’t have to manually restart the worker after code changes. |
+| php artisan queue:restart	|	Restarts all workers |
+| php artisan queue:work <connection name>	|	Runs a particular queue connection for the worker. Use the queue:work command assigned to the connection defined in config/queue.php. For example: php artisan queue:work redis  |
+| php artisan queue:work <connection name> --queue=<queue name>	|	Runs a particular queue for the connection. For example: php artisan queue:work redis --queue=emails |
+| php artisan queue:work <connection name> --tries=<number of attempts>	|	Runs the connection according to the specified maximum number of attempts. For example: php artisan queue:work redis --tries=5 |
+| php artisan queue:work <connection name> --tries=<number of attempts> --delay=<seconds>	|	Runs the connection according to the specified maximum number of attempts. The --delay option specifies the time (in seconds) to wait before retrying a job that has failed. For example: php artisan queue:work redis --tries=5 --delay=5 |
+| php artisan queue:work --once	|	Processes a single job from the queue |
+| php artisan queue:work --stop-when-empty	|	Processes all the jobs from the queue and stops when they’re done |
+| php artisan queue:work --timeout=<seconds>	|	Runs the job and kills off a child queue worker after the specified time limit. For example: php artisan queue:work --timeout=60 |
+| php artisan queue:work --sleep=<seconds>	|	If no new jobs available, the worker will not process any new jobs within a specified time limit (in seconds). For example: php artisan queue:work --sleep=3 |
+
+
 # Git [:arrow_up:](#index)
 #### Git global setup
 ```bash
