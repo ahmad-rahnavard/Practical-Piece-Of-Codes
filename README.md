@@ -103,6 +103,7 @@
 * [Enpass browser sync problem](#enpass-browser-sync-problem-arrow_up)
 * [Mount exfat on Ubuntu](#mount-exfat-on-ubuntu-arrow_up)
 * [Gimp](#gimp-arrow_up)
+* [Dictionary](#dictionary-arrow_up)
 ******************************************
 ##### Windows menu [:arrow_up:](#index)
 * [MBR to GPT](#mbr-to-gpt-arrow_up)
@@ -929,6 +930,59 @@ UNDERLINE=$(tput smul)
 # e.g
 echo "${RED}this is red ${NORMAL}this is normal"
 ```
+
+
+## Dictionary [:arrow_up:](#index)
+- [github translate-shell](https://github.com/soimort/translate-shell)
+- [website translate-shell](https://www.soimort.org/translate-shell/)
+
+Installation:
+```bash
+sudo apt install translate-shell
+# for the text to speech feature
+sudo apt install mplayer
+```
+
+Translation:
+```bash
+# a word or sentence
+trans word or sentence
+# brief translation
+trans -brief hello
+
+# file translation
+trans file:///home/sk/greet.txt
+
+# language codes
+trans -R
+
+# translate to a language
+trans :fa hello
+trans -t fa hello
+trans :de+fa hello
+
+# translate from a language
+trans de: hallo
+trans -s de hallo
+
+# intractive translation
+trans -shell -brief
+
+# translate a website
+trans :de https://web-art.ir
+
+# show the word origin lang
+trans -id hallo
+```
+
+Text to speech
+```bash
+# translated word
+trans -b -p :en hallo
+# original word
+trans -sp hallo
+```
+
 
 ## SWAP size [:arrow_up:](#index)
 
