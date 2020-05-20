@@ -986,7 +986,7 @@ trans -sp hallo
 
 ## Show git branch in terminal [:arrow_up:](#index)
 Add the following lines to ~/.bashrc
-```
+```bash
 # Show git branch name
 force_color_prompt=yes
 color_prompt=yes
@@ -1001,7 +1001,7 @@ fi
 unset color_prompt force_color_prompt
 ```
 or replace the codes bellow
-```
+```bash
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
@@ -1010,7 +1010,7 @@ fi
 unset color_prompt force_color_prompt
 ```
 and then run
-```
+```bash
 source ~/.bashrc
 ```
 
