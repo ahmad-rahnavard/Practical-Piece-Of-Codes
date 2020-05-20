@@ -104,6 +104,7 @@
 * [Mount exfat on Ubuntu](#mount-exfat-on-ubuntu-arrow_up)
 * [Gimp](#gimp-arrow_up)
 * [Dictionary](#dictionary-arrow_up)
+* [Show git branch in terminal](#show-git-branch-in-terminal-arrow_up)
 ******************************************
 ##### Windows menu [:arrow_up:](#index)
 * [MBR to GPT](#mbr-to-gpt-arrow_up)
@@ -983,6 +984,35 @@ trans -b -p :en hallo
 trans -sp hallo
 ```
 
+## Show git branch in terminal [:arrow_up:](#index)
+Add the following lines to ~/.bashrc
+```
+# Show git branch name
+force_color_prompt=yes
+color_prompt=yes
+parse_git_branch() {
+ git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+if [ "$color_prompt" = yes ]; then
+ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\$ '
+else
+ PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
+fi
+unset color_prompt force_color_prompt
+```
+or replace the codes bellow
+```
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+```
+and then run
+```
+source ~/.bashrc
+```
 
 ## SWAP size [:arrow_up:](#index)
 
