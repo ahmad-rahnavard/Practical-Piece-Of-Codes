@@ -1162,19 +1162,29 @@ sudo ./letsencrypt-auto certonly --manual -d web-art.ir -d *.web-art.ir -m email
 
 Deploy a DNS TXT record under the name
 `_acme-challenge.web-art.ir` with the given hash:
+
 e.g.
 `D5rdZ_XRvg7ZSzQTWn_qqi7PAgWrZx2QpsRfvdEPtjY`
 
 -----------------------------------------------------------
 
 Create a file containing just the given data:
+
 e.g:
 `5qGLPvHpLbz6lCkexnQ6vDJmqXZLe9Rc1pPed6mpTMI.VmchDTb2qJ0jTx_oY6rVL0YgAFUBcDrsLQBLS7W-SKU`
 
 And make it available on your web server at the given URL:
+
 e.g:
 `http://web-art.ir/.well-known/acme-challenge/5qGLPvHpLbz6lCkexnQ6vDJmqXZLe9Rc1pPed6mpTMI`
 
+Your certificate and chain have been saved at:
+
+`/etc/letsencrypt/live/salamattrading.com/fullchain.pem`
+
+Your key file has been saved at:
+
+`/etc/letsencrypt/live/salamattrading.com/privkey.pem`
 
 # Windows [:arrow_up:](#index)
 
