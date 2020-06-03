@@ -105,6 +105,7 @@
 * [Gimp](#gimp-arrow_up)
 * [Dictionary](#dictionary-arrow_up)
 * [Show git branch in terminal](#show-git-branch-in-terminal-arrow_up)
+* [Installing Let’s Encrypt ssl on shared host](#installing-let-s-encrypt-ssl-on-shared-host-arrow_up)
 ******************************************
 ##### Windows menu [:arrow_up:](#index)
 * [MBR to GPT](#mbr-to-gpt-arrow_up)
@@ -1146,6 +1147,34 @@ sudo apt install exfat-fuse exfat-utils
 # debian
 sudo apt install gimp-plugin-registry gimp-python
 ```
+
+### Installing Let’s Encrypt ssl on shared host [:arrow_up:](#index)
+
+```bash
+sudo git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
+
+cd /opt/letsencrypt
+
+sudo ./letsencrypt-auto certonly --manual -d web-art.ir -d *.web-art.ir -m email@website.com
+```
+
+-----------------------------------------------------------
+
+Deploy a DNS TXT record under the name
+`_acme-challenge.web-art.ir` with the given hash:
+e.g.
+`D5rdZ_XRvg7ZSzQTWn_qqi7PAgWrZx2QpsRfvdEPtjY`
+
+-----------------------------------------------------------
+
+Create a file containing just the given data:
+e.g:
+`5qGLPvHpLbz6lCkexnQ6vDJmqXZLe9Rc1pPed6mpTMI.VmchDTb2qJ0jTx_oY6rVL0YgAFUBcDrsLQBLS7W-SKU`
+
+And make it available on your web server at the given URL:
+e.g:
+`http://web-art.ir/.well-known/acme-challenge/5qGLPvHpLbz6lCkexnQ6vDJmqXZLe9Rc1pPed6mpTMI`
+
 
 # Windows [:arrow_up:](#index)
 
