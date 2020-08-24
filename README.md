@@ -3,7 +3,6 @@
 - [Docker](#docker-menu-arrow_up)
 - [Apache](#apache-menu-arrow_up)
 - [Git](#git-menu-arrow_up)
-- [PhpStorm](#phpstorm-menu-arrow_up)
 - [VSCode](#vscode-menu-arrow_up)
 - [VIM](#vim-menu-arrow_up)
 - [Elasticsearch](#elasticsearch-menu-arrow_up)
@@ -30,9 +29,6 @@
 ******************************************
 ##### Git menu [:arrow_up:](#index)
 * [Git log](#git-log-arrow_up)
-******************************************
-##### PhpStorm menu [:arrow_up:](#index)
-* [PhpStorm](#phpstorm-arrow_up)
 ******************************************
 ##### VSCode menu [:arrow_up:](#index)
 * [VSCode](#vscode-arrow_up)
@@ -109,7 +105,6 @@
 ******************************************
 ##### Windows menu [:arrow_up:](#index)
 * [MBR to GPT](#mbr-to-gpt-arrow_up)
-* [Windows Enterprise Activation](#windows-enterprise-activation-arrow_up)
 
 
 # Docker [:arrow_up:](#index)
@@ -608,26 +603,6 @@ git push -u origin --tags
 ```bash
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 ```
-
-# PhpStorm [:arrow_up:](#index)
-
-### Crack: [:arrow_up:](#index)
-
-```bash
-sudo nano /etc/hosts
-```
-```bash
-0.0.0.0 account.jetbrains.com
-```
-[Patch file](http://idea.lanyus.com/jar)
-Open
-`/opt/PhpStorm/bin/phpstorm.vmoptions`
-`/opt/PhpStorm/bin/phpstorm64.vmoptions`
-and add
-`-javaagent:/opt/PhpStorm/bin/JetbrainsIdesCrack.jar`
-[Get a key](http://idea.lanyus.com/getkey)
-[Servers](https://www.licensez.com/)
-
 # VSCode [:arrow_up:](#index)
 
 ### Custom status bar with shortcuts
@@ -1195,9 +1170,4 @@ list disk
 select disk 0
 clean
 convert gpt
-```
-### Windows Enterprise Activation [:arrow_up:](#index)
-```bash
-slmgr /skms kms.digiboy.ir
-slmgr /ato
 ```
