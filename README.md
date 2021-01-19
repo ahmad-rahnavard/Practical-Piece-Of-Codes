@@ -102,6 +102,7 @@
 * [Dictionary](#dictionary-arrow_up)
 * [Show git branch in terminal](#show-git-branch-in-terminal-arrow_up)
 * [Installing Let’s Encrypt ssl on shared host](#installing-lets-encrypt-ssl-on-shared-host-arrow_up)
+* [Background Noise Cancellation](#background-noice-cancellation-arrow_up)
 ******************************************
 ##### Windows menu [:arrow_up:](#index)
 * [MBR to GPT](#mbr-to-gpt-arrow_up)
@@ -1160,6 +1161,38 @@ Your certificate and chain have been saved at:
 Your key file has been saved at:
 
 `/etc/letsencrypt/live/salamattrading.com/privkey.pem`
+
+
+
+### Background Noise Cancellation [:arrow_up:](#index)
+
+1:
+```bash
+sudo nano /etc/pulse/default.pa
+```
+2: add
+```
+load-module module-echo-cancel
+```
+3:
+```bash
+pulseaudio -k
+# pulseaudio --start
+```
+-----------------------------------------------------------
+Set input as default
+2:
+```
+load-module module-echo-cancel source_name=logitechsource
+set-default-source logitechsource
+```
+-----------------------------------------------------------
+Rename device
+2:
+```
+load-module module-echo-cancel source_name=logitechsource source_properties=device.description=LogitechHD
+```
+
 
 # Windows [:arrow_up:](#index)
 
