@@ -102,7 +102,7 @@
 * [Dictionary](#dictionary-arrow_up)
 * [Show git branch in terminal](#show-git-branch-in-terminal-arrow_up)
 * [Installing Let’s Encrypt ssl on shared host](#installing-lets-encrypt-ssl-on-shared-host-arrow_up)
-* [Background Noise Cancellation](#background-noice-cancellation-arrow_up)
+* [Background Noise Cancellation](#background-noise-cancellation-arrow_up)
 ******************************************
 ##### Windows menu [:arrow_up:](#index)
 * [MBR to GPT](#mbr-to-gpt-arrow_up)
